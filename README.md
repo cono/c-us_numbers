@@ -1,4 +1,4 @@
-c-us_numbers
+US telephone numbers task
 ============
 
-Task for sorting us numbers with limit of memory
+Task for sorting US telephone numbers with memory limitation
