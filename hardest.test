@@ -1,0 +1,4 @@
+#! /bin/sh
+
+perl -e '$x=0;while($x<10_000_000_000){printf("%010d\n",$x);$x+=9_9999}' | \
+	perl -MList::Util -e 'print List::Util::shuffle <>'
