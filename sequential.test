@@ -1,0 +1,4 @@
+#! /bin/sh
+
+perl -e 'for ($x=0;$x<1_000_000;++$x){printf("%010d\n",$x)}' | \
+	perl -MList::Util -e 'print List::Util::shuffle <>'
