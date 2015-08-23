@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-Wall
 SOURCES=us_numbers.c
-EXECUTABLE=us_numbers
+EXECUTABLE=./us_numbers
 T_IN=$(wildcard *.test)
 INPUT=$(T_IN:.test=.in)
 TESTS=$(T_IN:.test=)
@@ -20,6 +20,6 @@ $(TESTS): compile $(INPUT)
 	diff -q $@.mout $@.sout && echo "ok $@"
 %.in: %.test
 	chmod +x $<
-	$< > $@
+	./$< > $@
 clean:
 	rm -rf $(EXECUTABLE) $(INPUT) *.sout *.mout
