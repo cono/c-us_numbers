@@ -77,7 +77,7 @@ process_line(char *line, u_int8_t *buf, u_int8_t **tail) {
 
 		if (cur > src) {
 			if (is_last(*pos)) {
-				if ((buf + BYTES_COUNT - i) > (*tail + BUF_SIZE))
+				if ((*tail + BYTES_COUNT - i) > (buf + BUF_SIZE))
 					return false;
 
 				*pos = clear_last(*pos);
@@ -122,7 +122,7 @@ process_line(char *line, u_int8_t *buf, u_int8_t **tail) {
 		}
 
 		if (cur < src) {
-			if ((buf + BYTES_COUNT - i) > (*tail + BUF_SIZE))
+			if ((*tail + BYTES_COUNT - i) > (buf + BUF_SIZE))
 				return false;
 
 			memmove(pos + BYTES_COUNT - i, pos, *tail - pos);
